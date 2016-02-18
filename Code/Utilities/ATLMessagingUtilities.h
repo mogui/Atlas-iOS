@@ -84,6 +84,12 @@ CGRect ATLImageRectConstrainedToSize(CGSize imageSize, CGSize maxSize);
 
 CGFloat ATLDegreeToRadians(CGFloat degrees);
 
+//-----------------------------
+// @name Conversation Utilities
+//-----------------------------
+
+LYRIdentity *__nullable ATLIdentityFromSet(NSString *userID, NSSet *participants);
+
 //------------------------
 // @name Message Utilities
 //------------------------
