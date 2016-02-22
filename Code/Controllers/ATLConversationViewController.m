@@ -458,6 +458,14 @@ static NSInteger const ATLPhotoActionSheet = 1000;
 
 #pragma mark - UI Configuration
 
+- (CGFloat)defaultCellHeightForMessage:(LYRMessage *)message {
+    if ([message.sender.userID isEqualToString:self.layerClient.authenticatedUserID]) {
+        return [ATLOutgoingMessageCollectionViewCell cellHeightForMessage:message inView:self.view];
+    } else {
+        return [ATLIncomingMessageCollectionViewCell cellHeightForMessage:message inView:self.view];
+    }
+}
+
 - (CGFloat)defaultCellHeightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LYRMessage *message = [self.conversationDataSource messageAtCollectionViewIndexPath:indexPath];
